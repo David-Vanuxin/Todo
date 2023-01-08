@@ -24,7 +24,7 @@ You can see all your records, update and delete them, also create new records
 
 4. Run the App!
 	```bash
-	node index
+	npm i && node index
 	```
 
 ## Exstension
