@@ -4,6 +4,29 @@
 
 You can see all your records, update and delete them, also create new records 
 
+## Deploy
+
+1. Download repo
+	```bash
+	git clone https://github.com/David-Vanuxin/Todo.git
+	```
+
+2. Create a database - see in file <a href='https://github.com/David-Vanuxin/Todo/blob/main/create-db.sql'>create-db.sql</a>
+3. Change file <i>db.js</i>
+	```js
+	const connection = mysql.createConnection({
+	  host: '127.0.0.1',
+	  user: /*insert your mysql user username*/,
+	  password: /*insert your mysql user password*/,
+	  database: 'TodoApp' 
+	})
+	```
+
+4. Run the App!
+	```bash
+	node index
+	```
+
 ## Exstension
 
 App has <strong>REST API</strong>: it's 4 requests to the "/api" route 
