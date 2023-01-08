@@ -10,7 +10,7 @@ App has <strong>REST API</strong>: it's 4 requests to the "/api" route
 
 ### Code samples
 1. <strong>Create</strong> record have key is "Test" and value is "Record"
-js```
+javascript```
 fetch('http://localhost:3000/api', {
 	method: 'POST',
 	headers: {
@@ -21,7 +21,7 @@ fetch('http://localhost:3000/api', {
 ```
 
 2. <strong>Read</strong> all records and print to console
-js```
+javascript```
 fetch('http://localhost:3000/api')
 	.then(response => {
 		return response.json();
@@ -32,7 +32,7 @@ fetch('http://localhost:3000/api')
 ```
 
 3. To <strong>update</strong> value you need specify key and new value
-js```
+javascript```
 fetch('http://localhost:3000/api', {
 		method: 'PUT',
 		headers: {
@@ -44,7 +44,7 @@ fetch('http://localhost:3000/api', {
 
 
 4. <strong>Delete</strong>
-js```
+javascript```
 fetch('http://localhost:3000/api', {
 	method: 'DELETE',
 	headers: {
