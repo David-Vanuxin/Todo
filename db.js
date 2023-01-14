@@ -20,16 +20,9 @@ const read = callback => {
 	})
 }
 
-/*const updateById = (id, updated_field, new_value) => {
-	if (updated_field == 'key') updated_field = 'name';
-	if (updated_field == 'value') updated_field = 'content';
-
-	connection.query(`update set ${updated_field}='${new_value}' where id=${id}`, (err, results, fields) => {
-		if (err) throw err;
-	})
-}*/
-
 const updateValueByKey = (key, new_value) => {
+	new_value = new_value.replaceAll('\\', '\\\\'); // protect from  \ 
+	new_value = new_value.replaceAll('\'', '\\\''); // protect from  ' 
 	connection.query(`update data set content='${new_value}' where name='${key}'`, (err, results, fields) => {
 		if (err) throw err;
 	})
@@ -53,4 +46,4 @@ const deleteByValue = value => {
 	})
 }
 
-module.exports = {create, read, /*updateById,*/ updateValueByKey, deleteById, deleteByKey, deleteByValue};
+module.exports = {create, read, updateValueByKey, deleteById, deleteByKey, deleteByValue};
