@@ -21,8 +21,10 @@ const read = callback => {
 }
 
 const updateValueByKey = (key, new_value) => {
-	new_value = new_value.replaceAll('\\', '\\\\'); // protect from  \ 
-	new_value = new_value.replaceAll('\'', '\\\''); // protect from  ' 
+	new_value = new_value.replaceAll('\\', '\\\\'); // protection from  \ 
+	new_value = new_value.replaceAll('\'', '\\\''); // protection from  ' 
+	key = key.replaceAll('\\', '\\\\');
+	key = key.replaceAll('\'', '\\\''); 
 	connection.query(`update data set content='${new_value}' where name='${key}'`, (err, results, fields) => {
 		if (err) throw err;
 	})
